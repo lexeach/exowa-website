@@ -1464,18 +1464,120 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="elementor-element elementor-element-590bd08a elementor-widget elementor-widget-heading" data-id="590bd08a" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 					<h4 class="elementor-heading-title elementor-size-default">Newsletter</h4>				</div>
-                                            <button type="button" className="metform-btn metform-submit-btn" id="redirect-button">
-                                            <span>Log In / Sign Up</span>
-                                            </button>
+				</div>
+				<div class="elementor-element elementor-element-ce40dd6 elementor-widget elementor-widget-metform" data-id="ce40dd6" data-element_type="widget" data-widget_type="metform.default">
+				<div class="elementor-widget-container">
+					<div id="mf-response-props-id-1730" data-previous-steps-style="" data-editswitchopen="" data-response_type="alert" data-erroricon="fas fa-exclamation-triangle" data-successicon="fas fa-check" data-messageposition="top" class="   mf-scroll-top-no">
+		<div class="formpicker_warper formpicker_warper_editable" data-metform-formpicker-key="1730">
+				
+			<div class="elementor-widget-container">
+				
+		<div id="metform-wrap-ce40dd6-1730" class="mf-form-wrapper" data-form-id="1730" data-action="https://info.tajirtechhub.com/wp-json/metform/v1/entries/insert/1730" data-wp-nonce="f08db38561" data-form-nonce="1cad7e11d7" data-quiz-summery="false" data-save-progress="false" data-form-type="general-form" data-stop-vertical-effect=""></div>
 
-                                         <script>
-                                         document.addEventListener("DOMContentLoaded", function() {
-                                         document.getElementById("redirect-button").addEventListener("click", function() {
-                                         window.location.href = "https://www.google.com";
-                                         });
-                                         });
-                                         </script>
 
+		<!----------------------------- 
+			* controls_data : find the the props passed indie of data attribute
+			* props.SubmitResponseMarkup : contains the markup of error or success message
+			* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+		--------------------------- -->
+
+				<script type="text/mf" class="mf-template">
+			function controls_data (value){
+				let currentWrapper = "mf-response-props-id-1730";
+				let currentEl = document.getElementById(currentWrapper);
+				
+				return currentEl ? currentEl.dataset[value] : false
+			}
+
+
+			let is_edit_mode = '' ? true : false;
+			let message_position = controls_data('messageposition') || 'top';
+
+			
+			let message_successIcon = controls_data('successicon') || '';
+			let message_errorIcon = controls_data('erroricon') || '';
+			let message_editSwitch = controls_data('editswitchopen') === 'yes' ? true : false;
+			let message_proClass = controls_data('editswitchopen') === 'yes' ? 'mf_pro_activated' : '';
+			
+			let is_dummy_markup = is_edit_mode && message_editSwitch ? true : false;
+
+			
+			return html`
+				<form
+					className="metform-form-content"
+					ref=${parent.formContainerRef}
+					onSubmit=${ validation.handleSubmit( parent.handleFormSubmit ) }
+				
+					>
+			
+			
+					${is_dummy_markup ? message_position === 'top' ?  props.ResponseDummyMarkup(message_successIcon, message_proClass) : '' : ''}
+					${is_dummy_markup ? ' ' :  message_position === 'top' ? props.SubmitResponseMarkup`${parent}${state}${message_successIcon}${message_errorIcon}${message_proClass}` : ''}
+
+					<!--------------------------------------------------------
+					*** IMPORTANT / DANGEROUS ***
+					${html``} must be used as in immediate child of "metform-form-main-wrapper"
+					class otherwise multistep form will not run at all
+					---------------------------------------------------------->
+
+					<div className="metform-form-main-wrapper" key=${'hide-form-after-submit'} ref=${parent.formRef}>
+					${html`
+								<div data-elementor-type="wp-post" key="2" data-elementor-id="1730" className="elementor elementor-1730" data-elementor-settings="{&quot;ha_cmc_init_switcher&quot;:&quot;no&quot;}" data-elementor-post-type="metform-form">
+						<section className="elementor-section elementor-top-section elementor-element elementor-element-f757b03 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f757b03" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ha_eqh_enable&quot;:false}">
+						<div className="elementor-container elementor-column-gap-default">
+					<div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a677a16" data-id="a677a16" data-element_type="column">
+			<div className="elementor-widget-wrap elementor-element-populated">
+						<div className="elementor-element elementor-element-daf2ec2 elementor-widget elementor-widget-mf-email" data-id="daf2ec2" data-element_type="widget" data-settings="{&quot;mf_input_name&quot;:&quot;mf-email&quot;}" data-widget_type="mf-email.default">
+				<div className="elementor-widget-container">
+					
+		<div className="mf-input-wrapper">
+			
+			<input 
+				type="email" 
+				 
+				defaultValue="" 
+				className="mf-input " 
+				id="mf-input-email-daf2ec2" 
+				name="mf-email" 
+				placeholder="${ parent.decodeEntities(`Email`) } " 
+				 
+				onBlur=${parent.handleChange} onFocus=${parent.handleChange} aria-invalid=${validation.errors['mf-email'] ? 'true' : 'false' } 
+				ref=${el=> parent.activateValidation({"message":"This field is required.","emailMessage":"Please enter a valid Email address","minLength":1,"maxLength":"","type":"none","required":false,"expression":"null"}, el)}
+							/>
+
+						<${validation.ErrorMessage} 
+				errors=${validation.errors} 
+				name="mf-email" 
+				as=${html`<span className="mf-error-message"></span>`}
+			/>
+			
+					</div>
+
+				</div>
+				</div>
+				<div className="elementor-element elementor-element-7d4379e mf-btn--justify elementor-widget elementor-widget-mf-button" data-id="7d4379e" data-element_type="widget" data-widget_type="mf-button.default">
+				<div className="elementor-widget-container">
+							<div className="mf-btn-wraper " data-mf-form-conditional-logic-requirement="">
+							<button type="submit" className="metform-btn metform-submit-btn " id="">
+					<span>${ parent.decodeEntities(`Log In / Sign Up`) } </span>
+				</button>
+			        </div>
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+							`}
+					</div>
+
+					${is_dummy_markup ? message_position === 'bottom' ? props.ResponseDummyMarkup(message_successIcon, message_proClass) : '' : ''}
+					${is_dummy_markup ? ' ' : message_position === 'bottom' ? props.SubmitResponseMarkup`${parent}${state}${message_successIcon}${message_errorIcon}${message_proClass}` : ''}
+				
+				</form>
+			`
+		</script>
 
 					</div>
 		</div>
