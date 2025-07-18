@@ -853,10 +853,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="elementor-element elementor-element-590bd08a elementor-widget elementor-widget-heading" data-id="590bd08a" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h4 class="elementor-heading-title elementor-size-default">User panel</h4>				</div>
-				<button type="button" className="metform-btn metform-submit-btn" id="redirect-button">
-                                            <span>Log In / Sign Up</span>
-                                            </button>
+    <h4 class="elementor-heading-title elementor-size-default">User panel</h4>
+</div>
+<button type="button" className="metform-btn metform-submit-btn" id="redirect-button"
+    onclick="window.open('https://test.exowa.click', '_blank')">
+    <span>Log In / Sign Up</span>
+</button>
+
+<!-- New buttons customized for APK download -->
+<button type="button" className="metform-btn metform-submit-btn" style="margin-top: 10px;"
+    onclick="window.location.href = 'test.apk';">
+    <span>Download Test App</span>
+</button>
+
+<button type="button" className="metform-btn metform-submit-btn" style="margin-top: 10px;"
+    onclick="window.location.href = 'user.apk';">
+    <span>Download User App</span>
+</button>
+
+
 
                                          <script>
                                          document.addEventListener("DOMContentLoaded", function() {
